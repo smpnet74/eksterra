@@ -10,6 +10,9 @@ resource "null_resource" "buildeks" {
      tar -zxf ./eksctl_Linux_amd64.tar.gz
      rm ./eksctl_Linux_amd64.tar.gz
      ./eksctl create cluster -f eksctl.yaml
+     if [ "$?" = "0" ]; then
+       true
+     fi
  EOH
   }
 }
